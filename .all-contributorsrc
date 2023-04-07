@@ -1,0 +1,25 @@
+{
+  "projectName": "style-lib",
+  "projectOwner": "@nx-fullstack",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "conventional",
+  "contributors": [
+    {
+      "login": "wgd3",
+      "name": "Wallace Daniel",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5431570?v=4",
+      "profile": "https://thefullstack.engineer/",
+      "contributions": [
+        "code",
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}

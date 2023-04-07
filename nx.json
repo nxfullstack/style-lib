@@ -3,9 +3,11 @@
   "npmScope": "style-lib",
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "ZWYyNzc3NGUtZDVjOC00OTEzLTgyNzAtYzMwYjNmMTQ4MzY1fHJlYWQtd3JpdGU=",
+        "url": "http://staging.nx.app"
       }
     }
   },

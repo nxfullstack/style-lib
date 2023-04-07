@@ -1,0 +1,57 @@
+module.exports = {
+  branches: ['main'],
+  plugins: [
+    [
+      '@semantic-release/commit-analyzer',
+      {
+        preset: 'conventional',
+        releaseRules: [
+          { type: 'docs', release: 'patch' },
+          { type: 'refactor', release: 'patch' },
+          { type: 'style', release: 'patch' },
+          { type: 'ci', release: 'patch' },
+        ],
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES'],
+        },
+      },
+    ],
+    [
+      '@semantic-release/release-notes-generator',
+      {
+        preset: 'conventionalcommits',
+        parserOpts: {
+          noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES', 'BREAKING'],
+        },
+        writerOpts: {
+          commitsSort: ['subject', 'scope'],
+        },
+        presetConfig: {
+          types: [
+            { type: 'feat', section: 'Features' },
+            { type: 'fix', section: 'Bug Fixes' },
+            { type: 'chore', section: 'Other' },
+            { type: 'docs', section: 'Documentation' },
+            { type: 'style', section: 'Style' },
+            { type: 'refactor', section: 'Other' },
+            { type: 'perf', section: 'Other' },
+            { type: 'test', section: 'Other' },
+            { type: 'ci', section: 'CI/CD' },
+          ],
+        },
+      },
+    ],
+    [
+      '@semantic-release/changelog',
+      {
+        changelogFile: 'CHANGELOG.md',
+      },
+    ],
+    [
+      '@semantic-release/git',
+      {
+        assets: ['package.json', 'CHANGELOG.md'],
+      },
+    ],
+  ],
+};
