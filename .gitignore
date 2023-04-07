@@ -41,3 +41,7 @@ Thumbs.db
 .env
 .nvmrc
 .npmrc
+
+# Generated Docusaurus files
+.docusaurus/
+.cache-loader/
