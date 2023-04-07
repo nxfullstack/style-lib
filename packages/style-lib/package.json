@@ -1,7 +1,38 @@
 {
   "name": "@nx-fullstack/style-lib",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nxfullstack/style-lib"
+  },
   "version": "0.0.1",
   "main": "src/index.js",
   "generators": "./generators.json",
-  "executors": "./executors.json"
+  "executors": "./executors.json",
+  "keywords": [
+    "Nx",
+    "monorepo",
+    "plugin",
+    "sass",
+    "scss"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": {
+    "name": "Wallace Daniel",
+    "email": "wallace@thefullstack.engineer",
+    "url": "https://thefullstack.engineer"
+  },
+  "homepage": "https://nxfullstack.github.io/style-lib",
+  "bugs": {
+    "url": "https://nxfullstack.github.io/style-lib/issues"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^16.0.0 || >= 18.0.0"
+  },
+  "dependencies": {
+    "stylelint": "^15.0.0",
+    "nx-stylelint": "^15.0.0"
+  }
 }

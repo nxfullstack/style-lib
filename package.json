@@ -7,7 +7,7 @@
     "commit": "npx cz",
     "semantic-release": "semantic-release"
   },
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@commitlint/cli": "^17.5.1",
     "@commitlint/config-conventional": "^17.4.4",

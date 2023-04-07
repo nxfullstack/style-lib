@@ -51,7 +51,7 @@ module.exports = {
     [
       '@semantic-release/github',
       {
-        assets: ['dist/*.tgz'],
+        assets: ['dist/packages/style-lib/*.tgz'],
       },
     ],
     [
