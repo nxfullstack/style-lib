@@ -12,7 +12,7 @@ const config = {
   baseUrl: '/style-lib/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/icon.svg',
   organizationName: '@nx-fullstack',
   projectName: 'style-lib',
 
@@ -40,7 +40,7 @@ const config = {
         title: 'Home',
         logo: {
           alt: 'style-lib',
-          src: 'img/logo.svg',
+          src: 'img/icon.svg',
         },
         items: [
           {

@@ -1,10 +1,8 @@
 <br/>
 <p align="center">
   <a href="https://github.com/wgd3/@nx-fullstack/style-lib">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/cover.png" alt="Logo" height="120">
   </a>
-
-  <h3 align="center">style-lib</h3>
 
   <p align="center">
     Easily add a shared style library to your Nx monorepo
