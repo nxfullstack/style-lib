@@ -43,6 +43,18 @@ module.exports = {
       },
     ],
     [
+      '@semantic-release/npm',
+      {
+        pkgRoot: 'dist/packages/style-lib',
+      },
+    ],
+    [
+      '@semantic-release/github',
+      {
+        assets: ['dist/*.tgz'],
+      },
+    ],
+    [
       '@semantic-release/changelog',
       {
         changelogFile: 'CHANGELOG.md',
