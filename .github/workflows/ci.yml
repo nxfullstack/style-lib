@@ -21,6 +21,10 @@ jobs:
         yarn nx lint style-lib
         yarn nx test style-lib --ci --codeCoverage
         yarn nx build style-lib
+      artifacts-path: |
+        dist/
+        coverage
+      artifacts-name: dist-and-coverage-artifacts
 
   agents:
     name: Nx Cloud - Agents
