@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
   "cli": "nx",
-  "$id": "StyleLib",
+  "$id": "Init",
   "title": "",
   "type": "object",
   "properties": {
@@ -22,6 +22,11 @@
     "directory": {
       "type": "string",
       "description": "A directory where the project is placed"
+    },
+    "addNxStylelint": {
+      "type": "boolean",
+      "default": true,
+      "description": "Installs the nx-stylelint plugin and configures this library with stylelint targets"
     }
   },
   "required": ["name"]

@@ -2,11 +2,11 @@ import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
 
 import generator from './generator';
-import { StyleLibGeneratorSchema } from './schema';
+import { NgAddGeneratorSchema } from './schema';
 
-describe('style-lib generator', () => {
+describe('ng-add generator', () => {
   let appTree: Tree;
-  const options: StyleLibGeneratorSchema = { name: 'test' };
+  const options: NgAddGeneratorSchema = { name: 'test' };
 
   beforeEach(() => {
     appTree = createTreeWithEmptyWorkspace({ layout: 'apps-libs' });
