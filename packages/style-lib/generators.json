@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "style-lib",
+  "version": "0.0.1",
+  "generators": {
+    "style-lib": {
+      "factory": "./src/generators/style-lib/generator",
+      "schema": "./src/generators/style-lib/schema.json",
+      "description": "style-lib generator"
+    }
+  }
+}
