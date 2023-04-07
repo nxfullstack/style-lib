@@ -10,7 +10,7 @@ module.exports = {
           { type: 'refactor', release: 'patch' },
           { type: 'style', release: 'patch' },
           { type: 'ci', release: 'patch' },
-          { type: 'chore', release: 'patch'}
+          { type: 'chore', release: 'patch' },
         ],
         parserOpts: {
           noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES'],
@@ -31,7 +31,7 @@ module.exports = {
           types: [
             { type: 'feat', section: 'Features' },
             { type: 'fix', section: 'Bug Fixes' },
-            { type: 'chore', section: 'Other' },
+            { type: 'chore', hidden: true, section: 'Other' },
             { type: 'docs', section: 'Documentation' },
             { type: 'style', section: 'Style' },
             { type: 'refactor', section: 'Other' },

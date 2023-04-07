@@ -1,10 +1,10 @@
 /* eslint-disable */
 export default {
-  displayName: "style-lib-e2e",
-  preset: "../../jest.preset.js",
+  displayName: 'style-lib-e2e',
+  preset: '../../jest.preset.js',
   transform: {
-    "^.+\\.[tj]s$": ["ts-jest", { tsconfig: "<rootDir>/tsconfig.spec.json" }],
+    '^.+\\.[tj]s$': ['ts-jest', { tsconfig: '<rootDir>/tsconfig.spec.json' }],
   },
-  moduleFileExtensions: ["ts", "js", "html"],
-  coverageDirectory: "../../coverage/e2e/style-lib-e2e",
+  moduleFileExtensions: ['ts', 'js', 'html'],
+  coverageDirectory: '../../coverage/e2e/style-lib-e2e',
 };

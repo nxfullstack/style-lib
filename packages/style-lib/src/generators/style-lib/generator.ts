@@ -6,9 +6,9 @@ import {
   names,
   offsetFromRoot,
   Tree,
-} from "@nrwl/devkit";
-import * as path from "path";
-import { StyleLibGeneratorSchema } from "./schema";
+} from '@nrwl/devkit';
+import * as path from 'path';
+import { StyleLibGeneratorSchema } from './schema';
 
 interface NormalizedSchema extends StyleLibGeneratorSchema {
   projectName: string;
@@ -25,10 +25,10 @@ function normalizeOptions(
   const projectDirectory = options.directory
     ? `${names(options.directory).fileName}/${name}`
     : name;
-  const projectName = projectDirectory.replace(new RegExp("/", "g"), "-");
+  const projectName = projectDirectory.replace(new RegExp('/', 'g'), '-');
   const projectRoot = `${getWorkspaceLayout(tree).libsDir}/${projectDirectory}`;
   const parsedTags = options.tags
-    ? options.tags.split(",").map((s) => s.trim())
+    ? options.tags.split(',').map((s) => s.trim())
     : [];
 
   return {
@@ -45,11 +45,11 @@ function addFiles(tree: Tree, options: NormalizedSchema) {
     ...options,
     ...names(options.name),
     offsetFromRoot: offsetFromRoot(options.projectRoot),
-    template: "",
+    template: '',
   };
   generateFiles(
     tree,
-    path.join(__dirname, "files"),
+    path.join(__dirname, 'files'),
     options.projectRoot,
     templateOptions
   );
@@ -59,11 +59,11 @@ export default async function (tree: Tree, options: StyleLibGeneratorSchema) {
   const normalizedOptions = normalizeOptions(tree, options);
   addProjectConfiguration(tree, normalizedOptions.projectName, {
     root: normalizedOptions.projectRoot,
-    projectType: "library",
+    projectType: 'library',
     sourceRoot: `${normalizedOptions.projectRoot}/src`,
     targets: {
       build: {
-        executor: "@style-lib/style-lib:build",
+        executor: '@style-lib/style-lib:build',
       },
     },
     tags: normalizedOptions.parsedTags,

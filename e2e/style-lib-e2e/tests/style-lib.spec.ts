@@ -4,9 +4,9 @@ import {
   readJson,
   runNxCommandAsync,
   uniq,
-} from "@nrwl/nx-plugin/testing";
+} from '@nrwl/nx-plugin/testing';
 
-describe("style-lib e2e", () => {
+describe('style-lib e2e', () => {
   // Setting up individual workspaces per
   // test can cause e2e runs to take a long time.
   // For this reason, we recommend each suite only
@@ -14,27 +14,27 @@ describe("style-lib e2e", () => {
   // on a unique project in the workspace, such that they
   // are not dependant on one another.
   beforeAll(() => {
-    ensureNxProject("@style-lib/style-lib", "dist/packages/style-lib");
+    ensureNxProject('@style-lib/style-lib', 'dist/packages/style-lib');
   });
 
   afterAll(() => {
     // `nx reset` kills the daemon, and performs
     // some work which can help clean up e2e leftovers
-    runNxCommandAsync("reset");
+    runNxCommandAsync('reset');
   });
 
-  it("should create style-lib", async () => {
-    const project = uniq("style-lib");
+  it('should create style-lib', async () => {
+    const project = uniq('style-lib');
     await runNxCommandAsync(
       `generate @style-lib/style-lib:style-lib ${project}`
     );
     const result = await runNxCommandAsync(`build ${project}`);
-    expect(result.stdout).toContain("Executor ran");
+    expect(result.stdout).toContain('Executor ran');
   }, 120000);
 
-  describe("--directory", () => {
-    it("should create src in the specified directory", async () => {
-      const project = uniq("style-lib");
+  describe('--directory', () => {
+    it('should create src in the specified directory', async () => {
+      const project = uniq('style-lib');
       await runNxCommandAsync(
         `generate @style-lib/style-lib:style-lib ${project} --directory subdir`
       );
@@ -44,15 +44,15 @@ describe("style-lib e2e", () => {
     }, 120000);
   });
 
-  describe("--tags", () => {
-    it("should add tags to the project", async () => {
-      const projectName = uniq("style-lib");
-      ensureNxProject("@style-lib/style-lib", "dist/packages/style-lib");
+  describe('--tags', () => {
+    it('should add tags to the project', async () => {
+      const projectName = uniq('style-lib');
+      ensureNxProject('@style-lib/style-lib', 'dist/packages/style-lib');
       await runNxCommandAsync(
         `generate @style-lib/style-lib:style-lib ${projectName} --tags e2etag,e2ePackage`
       );
       const project = readJson(`libs/${projectName}/project.json`);
-      expect(project.tags).toEqual(["e2etag", "e2ePackage"]);
+      expect(project.tags).toEqual(['e2etag', 'e2ePackage']);
     }, 120000);
   });
 });
