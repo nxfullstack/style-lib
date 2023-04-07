@@ -57,7 +57,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,json,css,scss,ts,html,component.html}": [
+    "*.{js,json,css,scss,ts,html,component.html,yml,yaml}": [
       "nx format:write --head=HEAD --base=main"
     ]
   }
