@@ -25,13 +25,14 @@ jobs:
         yarn nx test style-lib --ci --codeCoverage
         yarn nx build style-lib
       artifacts-path: |
-        dist/
+        dist
         coverage
+        package.jsno
       artifacts-name: dist-and-coverage-artifacts
-      final-commands: |
-        ls -la ./
-        ls -la dist/packages/style-lib/
-        npx semantic-release
+      # final-commands: |
+      #   ls -la ./
+      #   ls -la dist/packages/style-lib/
+      #   npx semantic-release
 
   agents:
     name: Nx Cloud - Agents
@@ -42,31 +43,30 @@ jobs:
     with:
       number-of-agents: 3
 
-  # release:
-  #   runs-on: ubuntu-latest
-  #   needs:
-  #     - main
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0
+  release:
+    runs-on: ubuntu-latest
+    needs:
+      - main
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: dist-and-coverage-artifacts
-  #         path: dist
+      - uses: actions/download-artifact@v3
+        with:
+          name: dist-and-coverage-artifacts
 
-  #     - name: Use Node.js
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: '18'
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
 
-  #     - run: yarn install --frozen-lockfile
+      - run: yarn install --frozen-lockfile
 
-  #     - name: Release
-  #       run: |
-  #         ls -la ./
-  #         ls -la dist/packages/style-lib/*
-  #         npx semantic-release
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Release
+        run: |
+          ls -la ./
+          ls -la dist/packages/style-lib/*
+          npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
