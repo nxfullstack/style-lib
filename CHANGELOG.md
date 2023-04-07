@@ -1,3 +1,16 @@
+## [1.2.1](https://github.com/nxfullstack/style-lib/compare/v1.2.0...v1.2.1) (2023-04-07)
+
+
+### Bug Fixes
+
+* **ng-add:** fixed application stylesheet path ([b2bf2af](https://github.com/nxfullstack/style-lib/commit/b2bf2afca17de000f601616dd31b899fa8d47a2b)), closes [#2](https://github.com/nxfullstack/style-lib/issues/2)
+
+
+### Documentation
+
+* updated README shields [skip ci] ([459924b](https://github.com/nxfullstack/style-lib/commit/459924bfd4c285793ab88cf4008f4cc4212d5147))
+* updated README shields again [skip ci] ([e622866](https://github.com/nxfullstack/style-lib/commit/e6228668dbd76538f7156888f93a4de8b914ae2b))
+
 ## [1.2.0](https://github.com/nxfullstack/style-lib/compare/v1.1.1...v1.2.0) (2023-04-07)
 
 ### Features
