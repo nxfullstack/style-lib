@@ -55,7 +55,7 @@ function updateAppConfig(tree: Tree, options: NormalizedSchema) {
           ...existingOpts,
           styles: [
             ...existingOpts.styles,
-            `${options.angularProjectConfig.sourceRoot}/app/lib.scss`,
+            `${options.angularProjectConfig.sourceRoot}/lib.scss`,
           ],
           stylePreprocessorOptions: {
             includePaths: [styleSourceRoot],
@@ -67,17 +67,6 @@ function updateAppConfig(tree: Tree, options: NormalizedSchema) {
 
   updateProjectConfiguration(tree, options.angularApplication, updatedConfig);
 }
-
-// async function updateMainStyles(tree: Tree, options: NormalizedSchema) {
-//   const stylesFile = `${options.angularProjectConfig.sourceRoot}/styles.scss`;
-//   const content = fs.readFileSync(stylesFile).toString().split('\n');
-//   content.splice(0, 0, `@use 'main';`);
-//   const newContent = content.join('\n');
-
-//   fs.writeFile(stylesFile, newContent, (err) => {
-//     if (err) return err;
-//   });
-// }
 
 function addFiles(tree: Tree, options: NormalizedSchema) {
   const templateOptions = {

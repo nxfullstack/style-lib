@@ -11,6 +11,7 @@ module.exports = {
           { type: 'style', release: 'patch' },
           { type: 'ci', release: 'patch' },
           { type: 'chore', release: 'patch' },
+          { type: 'test', release: 'patch' },
         ],
         parserOpts: {
           noteKeywords: ['BREAKING CHANGE', 'BREAKING CHANGES'],

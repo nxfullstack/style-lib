@@ -1,8 +1,6 @@
 import { createTreeWithEmptyWorkspace } from '@nrwl/devkit/testing';
 import { Tree, readProjectConfiguration } from '@nrwl/devkit';
-import { libraryGenerator } from '@nrwl/workspace/generators';
 import { applicationGenerator } from '@nrwl/angular/generators';
-import { callRule } from '@nrwl/workspace/testing';
 import generator from './generator';
 import { NgAddGeneratorSchema } from './schema';
 import initGenerator from '../init/generator';
@@ -27,5 +25,14 @@ describe('ng-add generator', () => {
     await generator(appTree, options);
     const config = readProjectConfiguration(appTree, 'style');
     expect(config).toBeDefined();
+  });
+
+  it('should have added a new stylesheet to the application', async () => {
+    const config = readProjectConfiguration(appTree, 'client');
+    expect(config.targets.build.options.styles.length).toBeGreaterThan(1);
+    expect(
+      config.targets.build.options.stylePreprocessorOptions.includePaths.length
+    ).toBeGreaterThanOrEqual(1);
+    expect(appTree.exists(`apps/client/src/lib.scss`)).toBeTruthy();
   });
 });
