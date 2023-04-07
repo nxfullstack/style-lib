@@ -3,29 +3,24 @@ name: release
 on:
   - workflow_dispatch
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   release:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-      # - name: Setup Git
-      #   run: |
-      #     git config user.name "GitHub Bot"
-      #     git config user.email "gituser@example.com"
+
       - run: yarn install --frozen-lockfile
-      - name: Version
-        shell: bash
-        run: npx semantic-release
+
+      - name: Release
+        run: |
+          npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
