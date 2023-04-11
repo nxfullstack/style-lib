@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/nxfullstack/style-lib/compare/v1.2.1...v1.2.2) (2023-04-11)
+
+
+### Documentation
+
+* updated README ([f5bb0d2](https://github.com/nxfullstack/style-lib/commit/f5bb0d2866208f3af7987322cef811462200056a))
+
 ## [1.2.1](https://github.com/nxfullstack/style-lib/compare/v1.2.0...v1.2.1) (2023-04-07)
 
 ### Bug Fixes
