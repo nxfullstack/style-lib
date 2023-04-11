@@ -12,7 +12,17 @@
         "main": "packages/style-lib/src/index.ts",
         "tsConfig": "packages/style-lib/tsconfig.lib.json",
         "assets": [
-          "packages/style-lib/*.md",
+          "packages/style-lib/assets/*",
+          {
+            "glob": "*.md",
+            "input": ".",
+            "output": "."
+          },
+          {
+            "glob": "LICENSE",
+            "input": ".",
+            "output": "."
+          },
           {
             "input": "./packages/style-lib/src",
             "glob": "**/!(*.ts)",
