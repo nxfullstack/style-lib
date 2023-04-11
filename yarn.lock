@@ -13368,6 +13368,11 @@ selfsigned@^2.1.1:
   dependencies:
     node-forge "^1"
 
+semantic-release-license@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/semantic-release-license/-/semantic-release-license-1.0.3.tgz#509d8b837c83589a0906e71bf2c7a07513d09f67"
+  integrity sha512-d+p1WSCFzIxLNPKXSkRpXWKQDBhRbp7g+w8LPzjVqFsUQ/eNw0KhMnKLoxsgVzZXAhEwpsZUx1VxBT5sjgOkIQ==
+
 semantic-release@^21.0.1:
   version "21.0.1"
   resolved "https://registry.yarnpkg.com/semantic-release/-/semantic-release-21.0.1.tgz#f2cb0eb1d0b1883efdac2883ec40342ac5c6ff30"

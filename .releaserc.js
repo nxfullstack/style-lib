@@ -44,27 +44,56 @@ module.exports = {
       },
     ],
     [
-      '@semantic-release/npm',
-      {
-        pkgRoot: 'dist/packages/style-lib',
-      },
-    ],
-    [
-      '@semantic-release/github',
-      {
-        assets: ['dist/packages/style-lib/*.tgz'],
-      },
-    ],
-    [
       '@semantic-release/changelog',
       {
         changelogFile: 'CHANGELOG.md',
       },
     ],
+    'semantic-release-license',
+    /**
+     * - udpates the version in package.json in the built application
+     * - leaves the tarball in dist/packages (so github can pick it up)
+     * - publishes to NPM
+     */
+    [
+      '@semantic-release/npm',
+      {
+        pkgRoot: 'dist/packages/style-lib',
+        tarballDir: 'dist/packages',
+      },
+    ],
+    // update the package.json in the sub-directory packages/style-lib
+    [
+      '@semantic-release/npm',
+      {
+        pkgRoot: 'packages/style-lib',
+        npmPublish: false,
+      },
+    ],
+    // update the root package.json version
+    [
+      '@semantic-release/npm',
+      {
+        npmPublish: false,
+      },
+    ],
+    [
+      '@semantic-release/github',
+      {
+        assets: [{ path: 'dist/**/*.tgz', label: 'Package Tarball' }],
+      },
+    ],
+
     [
       '@semantic-release/git',
       {
-        assets: ['package.json', 'CHANGELOG.md'],
+        assets: [
+          'package.json',
+          'CHANGELOG.md',
+          'LICENSE',
+          'packages/style-lib/package.json',
+          'yarn.lock',
+        ],
       },
     ],
   ],
